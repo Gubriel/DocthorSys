@@ -3,7 +3,7 @@
 #   Certifique-se de que o script esta rodando na pasta que o programa Docthor-Sys foi apagado.
 
 #Definindo dados
-echo "Digite o nome de usuario do GitHub: >> "
+echo "Digite o nome de usuario do GitHub >> "
 read user;
 echo "Digite o e-mail do GitHub >> "
 read email;
