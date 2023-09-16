@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MedicosController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SecretariasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +29,10 @@ Route::middleware(['auth', 'verified'])->group(callback: function () {
         return view('dashboard');
     })->name('dashboard');
 
+
     Route::get('medicos',[MedicosController::class, 'index'])->name('index.medicos');
-
-
+    Route::get('usuários',[UserController::class, 'index'])->name('index.users');
+    Route::get('secretarias',[SecretariasController::class, 'index'])->name('index.secretarias');
 
 });
 
