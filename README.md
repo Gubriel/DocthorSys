@@ -9,7 +9,7 @@ O DoctorSys é uma aplicação web escrita no Laravel Framework destinada a faci
 - Rapida resposta dos clientes;
 - Ele é muito legal;
 - Segue um padrão de cores;
-- Tem varias paginas e integração com um banco de dados :O;
+- Tem varias paginas e integração com um banco de dados (poggers);
 <br/>
 
 ## Colaboradores/Equipe (Especializada)
