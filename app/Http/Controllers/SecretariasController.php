@@ -9,10 +9,10 @@ class SecretariasController extends Controller
 {
     public function index()
     {
-        $secretaria = array(
-            array('nome' => 'teste','especialidade' => 'teste','telefone' => 'teste'),
+        $secretarias = array(
+            array('nome' => ' ','especialidade' => ' ','telefone' => ' '),
         );
 
-        return view('app.pages.secretaria.listar', compact('secretaria'));
+        return view('app.pages.secretaria.listar', compact('secretarias'));
     }
 }
