@@ -33,8 +33,9 @@ Route::middleware(['auth', 'verified'])->group(callback: function () {
     Route::get('medicos',[MedicosController::class, 'index'])->name('index.medicos');
     Route::get('usuários',[UserController::class, 'index'])->name('index.users');
     Route::get('secretarias',[SecretariasController::class, 'index'])->name('index.secretarias');
-    Route::get('sobre', function () {return view('app/pages/sobre/sobre');});
 
+    Route::get('sobre', function () {return view('app/pages/sobre/sobre');});
+    Route::get('agenda', function () {return view('app/pages/agenda/agenda');})->name('index.agenda');
 });
 
 

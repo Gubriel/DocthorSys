@@ -32,6 +32,10 @@
                         {{ __('Secretarias') }}
                        
                     </x-nav-link>
+                    <x-nav-link :href="route('index.agenda')" :active="request()->routeIs('index.secretarias')">
+                        {{ __('Agenda') }}
+
+                    </x-nav-link>
                 </div>
             </div>
 
