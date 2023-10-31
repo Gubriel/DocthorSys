@@ -1,46 +1,129 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Welly - Hospital Bootstrap Admin Dashboard</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/dev/images/favicon.png') }}">
+    <link href="{{ asset('./dev/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet') }}">
+    <link rel="stylesheet" href="{{ asset('./dev/vendor/chartist/css/chartist.min.css') }}">
+    <link href="{{ asset('./dev/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('./dev/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('./dev/css/style.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+<!--*******************
+    Preloader start
+********************-->
+<div id="preloader">
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+</div>
+<!--*******************
+    Preloader end
+********************-->
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+<!--**********************************
+    Main wrapper start
+***********************************-->
+<div id="main-wrapper">
 
-        <!-- jQuery -->
-        <script src="{{ asset('assets/libs/JQuery/dist/jquery.min.js') }}"></script>
+    <!--**********************************
+        Nav header start
+    ***********************************-->
+    @include('includes.nav')
+    <!--**********************************
+        Nav header end
+    ***********************************-->
 
-        <!-- DataTables -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/libs/Datatable/datatables.net-dt/css/jquery.dataTables.min.css') }}">
-        <script type="text/javascript" charset="utf8" src="{{ asset('assets/libs/Datatable/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <!--**********************************
+        Chat box start
+    ***********************************-->
+   @include('includes.chatbox')
+    <!--**********************************
+        Chat box End
+    ***********************************-->
 
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <!--**********************************
+        Header start
+    ***********************************-->
+    @include('includes.header')
+    <!--**********************************
+        Header end ti-comment-alt
+    ***********************************-->
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-green-900">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+    <!--**********************************
+        Sidebar start
+    ***********************************-->
+    @include('includes.sidebar')
+    <!--**********************************
+        Sidebar end
+    ***********************************-->
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+    <!--**********************************
+        Content body start
+    ***********************************-->
+    @yield('content')
+    <!--**********************************
+        Content body end
+    ***********************************-->
+
+    <!--**********************************
+        Footer start
+    ***********************************-->
+    @include('includes.footer')
+    <!--**********************************
+        Footer end
+    ***********************************-->
+
+    <!--**********************************
+       Support ticket button start
+    ***********************************-->
+
+    <!--**********************************
+       Support ticket button end
+    ***********************************-->
 
 
-    </body>
+</div>
+<!--**********************************
+    Main wrapper end
+***********************************-->
+
+<!--**********************************
+    Scripts
+***********************************-->
+<!-- Required vendors -->
+<script src="{{ asset('./dev/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('./dev/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('./dev/vendor/chart.js/Chart.bundle.min.js') }}"></script>
+<script src="{{ asset('./dev/js/custom.min.js') }}"></script>
+<script src="{{ asset('./dev/js/deznav-init.js') }}"></script>
+<script src="{{ asset('/devvendor/bootstrap-datetimepicker/js/moment.js') }}"></script>
+<script src="{{ asset('/devvendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+<!-- Chart piety plugin files -->
+<script src="{{ asset('./dev/vendor/peity/jquery.peity.min.js') }}"></script>
+
+<!-- Apex Chart -->
+<script src="{{ asset('./dev/vendor/apexchart/apexchart.js') }}"></script>
+
+<!-- Dashboard 1 -->
+<script src="{{ asset('./dev/js/dashboard/dashboard-1.js') }}"></script>
+<script>
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+            inline: true,
+        });
+    });
+</script>
+
+</body>
 </html>
