@@ -26,7 +26,9 @@ Route::middleware(['auth', 'verified'])->group(callback: function () {
 
     Route::get('/dashboard', function () {
 
-        return view('dashboard');
+        $page = 'index';
+
+        return view('dashboard',compact('page'));
     })->name('dashboard');
 
 
@@ -35,7 +37,11 @@ Route::middleware(['auth', 'verified'])->group(callback: function () {
     Route::get('secretarias',[SecretariasController::class, 'index'])->name('index.secretarias');
 
     Route::get('sobre', function () {return view('app/pages/sobre/sobre');});
-    Route::get('agenda', function () {return view('app/pages/agenda/agenda');})->name('index.agenda');
+    Route::get('agenda', function () {
+        $page = 'agenda';
+
+        return view('app/pages/agenda/agenda',compact('page'));
+    })->name('index.agenda');
 });
 
 
