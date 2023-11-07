@@ -20,10 +20,10 @@
             <div class="col-md-5">
                 <div class="form-input-content text-center error-page">
                     <h1 class="error-text font-weight-bold">404</h1>
-                    <h4><i class="fa fa-exclamation-triangle text-warning"></i> The page you were looking for is not found!</h4>
-                    <p>You may have mistyped the address or the page may have moved.</p>
+                    <h4><i class="fa fa-exclamation-triangle text-warning"></i> A página que você procurava não foi encontrada!</h4>
+                    <p>Você pode ter digitado o endereço errado ou a página pode ter sido movida.</p>
                     <div>
-                        <a class="btn btn-primary" href="./index.html">Back to Home</a>
+                        <a class="btn btn-primary" href="{{ url('/') }}">Retornar para o Inicio</a>
                     </div>
                 </div>
             </div>

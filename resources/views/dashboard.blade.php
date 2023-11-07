@@ -655,7 +655,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <img src="images/users/6.jpg" alt="" class="img-2 mr-3">
+                                                        <img src="{{ asset('../dev/images/users/6.jpg') }}" alt="" class="img-2 mr-3">
                                                         <div>
                                                             <h6 class="fs-16 mb-1"><a href="patient.html" class="text-black">Roby Romeo</a></h6>
                                                             <span class="fs-14">41 Years Old</span>
@@ -679,7 +679,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <img src="images/users/7.jpg" alt="" class="img-2 mr-3">
+                                                        <img src="{{ asset('../dev/images/users/7.jpg') }}" alt="" class="img-2 mr-3">
                                                         <div>
                                                             <h6 class="fs-16 mb-1"><a href="patient.html" class="text-black">Angela Nurhayati</a></h6>
                                                             <span class="fs-14">21 Years Old</span>
@@ -703,7 +703,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <img src="images/users/8.jpg" alt="" class="img-2 mr-3">
+                                                        <img src="{{ asset('../dev/images/users/8.jpg') }}" alt="" class="img-2 mr-3">
                                                         <div>
                                                             <h6 class="fs-16 mb-1"><a href="patient.html" class="text-black">James Robinson</a></h6>
                                                             <span class="fs-14">41 Years Old</span>
@@ -727,7 +727,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <img src="images/users/9.jpg" alt="" class="img-2 mr-3">
+                                                        <img src="{{ asset('../dev/images/users/9.jpg') }}" alt="" class="img-2 mr-3">
                                                         <div>
                                                             <h6 class="fs-16 mb-1"><a href="patient.html" class="text-black">Thomas Jaja</a></h6>
                                                             <span class="fs-14">7 Years Old</span>
@@ -751,7 +751,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <img src="images/users/10.jpg" alt="" class="img-2 mr-3">
+                                                        <img src="{{ asset('../dev/images/users/10.jpg') }}" alt="" class="img-2 mr-3">
                                                         <div>
                                                             <h6 class="fs-16 mb-1"><a href="patient.html" class="text-black">Cindy Brownleee</a></h6>
                                                             <span class="fs-14">71 Years Old</span>
@@ -775,7 +775,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <img src="images/users/11.jpg" alt="" class="img-2 mr-3">
+                                                        <img src="{{ asset('../dev/images/users/11.jpg') }}" alt="" class="img-2 mr-3">
                                                         <div>
                                                             <h6 class="fs-16 mb-1"><a href="patient.html" class="text-black">Oconner Jr.</a></h6>
                                                             <span class="fs-14">17 Years Old</span>
@@ -799,7 +799,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <img src="images/users/7.jpg" alt="" class="img-2 mr-3">
+                                                        <img src="{{ asset('../dev/images/users/7.jpg') }}" alt="" class="img-2 mr-3">
                                                         <div>
                                                             <h6 class="fs-16 mb-1"><a href="patient.html" class="text-black">Angela Nurhayati</a></h6>
                                                             <span class="fs-14">21 Years Old</span>
@@ -823,7 +823,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <img src="images/users/8.jpg" alt="" class="img-2 mr-3">
+                                                        <img src="{{ asset('../dev/images/users/8.jpg') }}" alt="" class="img-2 mr-3">
                                                         <div>
                                                             <h6 class="fs-16 mb-1"><a href="patient.html" class="text-black">James Robinson</a></h6>
                                                             <span class="fs-14">41 Years Old</span>
@@ -847,7 +847,7 @@
                                             <tr>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <img src="images/users/9.jpg" alt="" class="img-2 mr-3">
+                                                        <img src="{{ asset('../dev/images/users/9.jpg') }}" alt="" class="img-2 mr-3">
                                                         <div>
                                                             <h6 class="fs-16 mb-1"><a href="patient.html" class="text-black">Thomas Jaja</a></h6>
                                                             <span class="fs-14">7 Years Old</span>

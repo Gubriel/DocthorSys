@@ -32,7 +32,17 @@ Route::middleware(['auth', 'verified'])->group(callback: function () {
     })->name('dashboard');
 
 
-    Route::get('medicos',[MedicosController::class, 'index'])->name('index.medicos');
+
+    Route::group(['prefix' => 'medico', 'as' => 'medico.'], function () {
+        Route::get('/', [MedicosController::class, 'index'])->name('index'); // Listar
+        Route::get('/editar/', [MedicosController::class, 'edit'])->name('edit'); // Editar
+        Route::post('/excluir/', [MedicosController::class, 'delete'])->name('delete'); // Excluir
+        Route::get('/buscar', [MedicosController::class, 'search'])->name('search'); // Buscar
+        Route::get('/create', [MedicosController::class, 'create'])->name('create'); // Buscar
+
+    });
+
+
     Route::get('usuários',[UserController::class, 'index'])->name('index.users');
     Route::get('secretarias',[SecretariasController::class, 'index'])->name('index.secretarias');
 

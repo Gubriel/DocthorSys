@@ -26,23 +26,19 @@
                         </ul>
                     </li>--}}
                     <li><a href="{{ route('index.agenda') }}">Calendar</a></li>
-                    {{--<li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Médicos</a>
                         <ul aria-expanded="false">
-                            <li><a href="./ecom-product-grid.html">Product Grid</a></li>
-                            <li><a href="./ecom-product-list.html">Product List</a></li>
-                            <li><a href="./ecom-product-detail.html">Product Details</a></li>
-                            <li><a href="./ecom-product-order.html">Order</a></li>
-                            <li><a href="./ecom-checkout.html">Checkout</a></li>
-                            <li><a href="./ecom-invoice.html">Invoice</a></li>
-                            <li><a href="./ecom-customers.html">Customers</a></li>
+                            <li><a href="{{ route('medico.create') }}">Criar</a></li>
+                            <li><a href="{{ route('medico.index') }}">Listar</a></li>
+                            <li><a href="{{ route('medico.delete') }}">Apagar</a></li>
                         </ul>
-                    </li>--}}
+                    </li>
                 </ul>
             </li>
 
-<div class="copyright">
-    <p><strong>Welly Hospital Admin Dashboard</strong> © 2020 All Rights Reserved</p>
-    <p>Made with ♥ by DexignZone</p>
-</div>
-</div>
+        <div class="copyright">
+            <p><strong>Painel de administração DOCTHORS SYS</strong> © 2020 Todos os direitos reservados</p>
+            <p>Feito com ♥ por EQUIPE DOCTHORS SYS</p>
+        </div>
+    </div>
 </div>
