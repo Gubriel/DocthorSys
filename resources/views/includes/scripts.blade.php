@@ -28,6 +28,66 @@
             </script>
 
             @break
+        @case($page == 'medicosCreate')
+
+            <!--**********************************
+        Scripts
+    ***********************************-->
+            <!-- Required vendors -->
+            <script src="{{ asset('../dev/vendor/global/global.min.js') }}"></script>
+            <script src="{{ asset('../dev/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+            <script src="{{ asset('../dev/vendor/chart.js/Chart.bundle.min.js') }}"></script>
+            <script src="{{ asset('../dev/js/custom.min.js') }}"></script>
+            <script src="{{ asset('../dev/js/deznav-init.js') }}"></script>
+            <script src="{{ asset('../dev/vendor/bootstrap-datetimepicker/js/moment.js') }}"></script>
+            <script src="{{ asset('../dev/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+            <!-- Chart piety plugin files -->
+            <script src="{{ asset('../dev/vendor/peity/jquery.peity.min.js') }}"></script>
+
+            <!-- Apex Chart -->
+            <script src="{{ asset('../dev/vendor/apexchart/apexchart.js') }}"></script>
+            <!-- Dashboard 1 -->
+            <script src="{{ asset('../dev/js/dashboard/doctor-details.js') }}"></script>
+            <script>
+                $(function () {
+                    $('#datetimepicker1').datetimepicker({
+                        inline: true,
+                    });
+                });
+            </script>
+
+            @break
+        @case($page == 'medicos')
+
+            <!--**********************************
+        Scripts
+    ***********************************-->
+            <!-- Required vendors -->
+            <script src="{{ asset('../dev/vendor/global/global.min.js') }}"></script>
+            <script src="{{ asset('../dev/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+            <script src="{{ asset('../dev/vendor/chart.js/Chart.bundle.min.js') }}"></script>
+            <script src="{{ asset('../dev/js/custom.min.js') }}"></script>
+            <script src="{{ asset('../dev/js/deznav-init.js') }}"></script>
+
+            <!-- Datatable -->
+            <script src="{{ asset('../dev/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+            <script>
+                (function($) {
+                    var table = $('#example5').DataTable({
+                        searching: false,
+                        paging:true,
+                        select: false,
+                        //info: false,
+                        lengthChange:false
+
+                    });
+                    $('#example tbody').on('click', 'tr', function () {
+                        var data = table.row( this ).data();
+
+                    });
+                })(jQuery);
+            </script>
+            @break
         @case($page == 'agenda')
 
             <!-- Required vendors -->

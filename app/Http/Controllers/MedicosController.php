@@ -9,11 +9,22 @@ class MedicosController extends Controller
 
     public function index()
     {
+        $page = 'medicos';
         $medicos = array(
             array('nome' => 'Elliot Anderson da Silva', 'registro' => '1','especialidade' => 'Psiquiatra', 'telefone' => '46999432305', 'email' => 'EAnder69@protonmail.com', 'cpf' => '12456125421', 'rg' => '124352626', 'endereco' => 'Evil-corp'),
         );
 
-        return view('app.pages.medico.listar', compact('medicos'));
+        return view('app.pages.medicos.index', compact('medicos','page'));
+    }
+
+    public function create()
+    {
+        $page = 'medicosCreate';
+        $medicos = array(
+            array('nome' => 'Elliot Anderson da Silva', 'registro' => '1','especialidade' => 'Psiquiatra', 'telefone' => '46999432305', 'email' => 'EAnder69@protonmail.com', 'cpf' => '12456125421', 'rg' => '124352626', 'endereco' => 'Evil-corp'),
+        );
+
+        return view('app.pages.medicos.create', compact('medicos','page'));
     }
 
 
