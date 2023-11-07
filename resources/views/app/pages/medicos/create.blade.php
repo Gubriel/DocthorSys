@@ -45,14 +45,14 @@
                                             <div class="col-lg-6 mb-2">
                                                 <div class="form-group">
                                                     <label class="text-label">Nome*</label>
-                                                    <input type="text" name="name" class="form-control" placeholder="Parsley" required>
+                                                    <input type="text" name="name" class="form-control" placeholder="Medio Exemplo" required>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6 mb-2">
                                                 <div class="form-group">
                                                     <label class="text-label">CRM*</label>
-                                                    <input type="text" name="lastName" class="form-control" placeholder="Montana" required>
+                                                    <input type="text" name="crm" class="form-control" placeholder="4403" required>
                                                 </div>
                                             </div>
 
@@ -66,14 +66,14 @@
                                             <div class="col-lg-12 mb-2">
                                                 <div class="form-group">
                                                     <label class="text-label">Telefone*</label>
-                                                    <input type="text" name="phoneNumber" class="form-control" placeholder="(+46) 9 9900-0000" required>
+                                                    <input type="text" name="phone" class="form-control" placeholder="(+55) 46 9 9900-0000" required>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-12 mb-3">
                                                 <div class="form-group">
                                                     <label class="text-label">Endereço*</label>
-                                                    <input type="text" name="place" class="form-control" required>
+                                                    <input type="text" name="endereco" class="form-control" required>
                                                 </div>
                                             </div>
                                         </div>
