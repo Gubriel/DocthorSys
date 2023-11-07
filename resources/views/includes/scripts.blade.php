@@ -31,28 +31,26 @@
         @case($page == 'medicosCreate')
 
             <!--**********************************
-        Scripts
-    ***********************************-->
+                Scripts
+            ***********************************-->
             <!-- Required vendors -->
             <script src="{{ asset('../dev/vendor/global/global.min.js') }}"></script>
             <script src="{{ asset('../dev/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
-            <script src="{{ asset('../dev/vendor/chart.js/Chart.bundle.min.js') }}"></script>
             <script src="{{ asset('../dev/js/custom.min.js') }}"></script>
             <script src="{{ asset('../dev/js/deznav-init.js') }}"></script>
-            <script src="{{ asset('../dev/vendor/bootstrap-datetimepicker/js/moment.js') }}"></script>
-            <script src="{{ asset('../dev/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
-            <!-- Chart piety plugin files -->
-            <script src="{{ asset('../dev/vendor/peity/jquery.peity.min.js') }}"></script>
 
-            <!-- Apex Chart -->
-            <script src="{{ asset('../dev/vendor/apexchart/apexchart.js') }}"></script>
-            <!-- Dashboard 1 -->
-            <script src="{{ asset('../dev/js/dashboard/doctor-details.js') }}"></script>
+            <script src="{{ asset('../dev/vendor/jquery-steps/build/jquery.steps.min.js') }}"></script>
+            <script src="{{ asset('../dev/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
+            <!-- Form validate init -->
+            <script src="{{ asset('../dev/js/plugins-init/jquery.validate-init.js') }}"></script>
+
+            <!-- Form Steps -->
+            <script src="{{ asset('../dev/vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js') }}"></script>
+
             <script>
-                $(function () {
-                    $('#datetimepicker1').datetimepicker({
-                        inline: true,
-                    });
+                $(document).ready(function(){
+                    // SmartWizard initialize
+                    $('#smartwizard').smartWizard();
                 });
             </script>
 

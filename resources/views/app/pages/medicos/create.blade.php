@@ -6,349 +6,244 @@
             Content body start
         ***********************************-->
     <div class="content-body">
-        <!-- row -->
         <div class="container-fluid">
-            <div class="form-head d-flex page-titles mb-sm-4 mb-3 align-items-center">
-                <div class="mr-auto">
-                    <h2 class="text-black font-w600">Doctor Details</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Doctor</a></li>
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">#P-0616</a></li>
-                    </ol>
-                </div>
-                <a href="app-profile.html" class="btn btn-outline-primary">Update Profile</a>
+            <div class="page-titles">
+                <h4>Cadastro Médico</h4>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Medicos</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Create</a></li>
+                </ol>
             </div>
+            <!-- row -->
             <div class="row">
-                <div class="col-xl-9 col-xxl-12">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="card doctor-details-card">
-                                <div class="bg-img-bx">
-                                    <img src="{{ asset('../dev/images/bg2.jpg') }}" alt="" class="bg-img">
-                                    <a href="doctor.html" class="btn btn-primary"><i class="las la-stethoscope mr-3 scale5"></i>Dentist Specialist</a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-sm-flex d-block mb-3">
-                                        <div class="img-card mb-sm-0 mb-3">
-                                            <img src="{{ asset('../dev/images/profile/3.png') }}" alt="">
-                                        </div>
-                                        <div class="card-info d-flex align-items-start">
-                                            <div class="mr-auto pr-3">
-                                                <h2 class="font-w600 mb-sm-2 mb-1 text-black">Dr. David James Lee</h2>
-                                                <p class="mb-sm-2 mb-1">#P-00016</p>
-                                                <span class="date">
-													<i class="las la-clock"></i>
-													Join on 21 August 2020, 12:45 AM</span>
-                                            </div>
-                                            <span class="mr-ico bg-primary">
-													<i class="las la-mars"></i>
-												</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="fs-20 text-black font-w600">Biography</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                                    </p>
-                                    <p>
-                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-                                    </p>
-                                </div>
-                            </div>
+                <div class="col-xl-12 col-xxl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Etapa 1</h4>
                         </div>
-                        <div class="col-xl-12">
-                            <div class="card">
-                                <div class="card-header border-0 pb-0">
-                                    <div>
-                                        <h4 class="fs-20 text-black mb-1">Doctor Ability</h4>
-                                        <span class="fs-12">Lorem ipsum dolor sit amet, consectetur</span>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-5 mb-lg-0 mb-3">
-                                            <div class="d-flex mb-3 align-items-center">
-													<span class="fs-12 col-6 p-0 text-black">
-														<svg class="mr-2" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-															<rect width="19" height="19" fill="#5F74BF"/>
-														</svg>
-														Immunities
-													</span>
-                                                <div class="progress rounded-0 col-6 p-0">
-                                                    <div class="progress-bar rounded-0 progress-animated" style="width: 80%; height:6px;background:#5F74BF;" role="progressbar">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
+                        <div class="card-body">
+                            <div id="smartwizard" class="form-wizard order-create">
+                                <ul class="nav nav-wizard">
+                                    <li><a class="nav-link" href="#wizard_Service">
+                                            <span>1</span>
+                                        </a></li>
+                                    <li><a class="nav-link" href="#wizard_Time">
+                                            <span>2</span>
+                                        </a></li>
+                                    <li><a class="nav-link" href="#wizard_Details">
+                                            <span>3</span>
+                                        </a></li>
+                                    <li><a class="nav-link" href="#wizard_Payment">
+                                            <span>4</span>
+                                        </a></li>
+                                </ul>
+                                <form action="">
+                                    <div class="tab-content">
+                                    <div id="wizard_Service" class="tab-pane" role="tabpanel">
+                                        <div class="row">
+
+                                            <div class="col-lg-6 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Nome*</label>
+                                                    <input type="text" name="name" class="form-control" placeholder="Parsley" required>
                                                 </div>
                                             </div>
-                                            <div class="d-flex mb-3 align-items-center">
-													<span class="fs-12 col-6 p-0 text-black">
-														<svg class="mr-2" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-															<rect width="19" height="19" fill="#FFD439"/>
-														</svg>
-														Stamina
-													</span>
-                                                <div class="progress rounded-0 col-6 p-0">
-                                                    <div class="progress-bar rounded-0 progress-animated" style="width: 40%; height:6px;background:#FFD439;" role="progressbar">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
+
+                                            <div class="col-lg-6 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">CRM*</label>
+                                                    <input type="text" name="lastName" class="form-control" placeholder="Montana" required>
                                                 </div>
                                             </div>
-                                            <div class="d-flex mb-3 align-items-center">
-													<span class="fs-12 col-6 p-0 text-black">
-														<svg class="mr-2" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-															<rect width="19" height="19" fill="#FF6E5A"/>
-														</svg>
-														Heart Beat
-													</span>
-                                                <div class="progress rounded-0 col-6 p-0">
-                                                    <div class="progress-bar rounded-0 progress-animated" style="width: 90%; height:6px;background:#FF6E5A;" role="progressbar">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
+
+                                            <div class="col-lg-12 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">E-mail*</label>
+                                                    <input type="email" class="form-control" id="inputGroupPrepend2" aria-describedby="inputGroupPrepend2" placeholder="example@example.com.com" required>
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
-													<span class="fs-12 col-6 p-0 text-black">
-														<svg class="mr-2" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-															<rect width="19" height="19" fill="#5FBF91"/>
-														</svg>
-														Colestrol
-													</span>
-                                                <div class="progress rounded-0 col-6 p-0">
-                                                    <div class="progress-bar rounded-0 progress-animated" style="width: 80%; height:6px;background:#5FBF91;" role="progressbar">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
+
+                                            <div class="col-lg-12 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Telefone*</label>
+                                                    <input type="text" name="phoneNumber" class="form-control" placeholder="(+46) 9 9900-0000" required>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-7">
-                                            <div class="row align-items-center">
-                                                <div class="col-lg-6 col-sm-6 mb-sm-0 mb-3">
-                                                    <div id="pieChart"></div>
-                                                </div>
-                                                <div class="col-lg-6 col-sm-6">
-                                                    <div id="pieChart2"></div>
-                                                    <div class="d-flex align-items-center">
-                                                        <svg class="mr-3" width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <rect width="3.54545" height="26" rx="1.77273" transform="matrix(-1 0 0 1 24.8184 0)" fill="#757575"/>
-                                                            <rect width="3.54545" height="18.9091" rx="1.77273" transform="matrix(-1 0 0 1 17.7275 7.09091)" fill="#757575"/>
-                                                            <rect width="3.54545" height="8.27273" rx="1.77273" transform="matrix(-1 0 0 1 10.6367 17.7273)" fill="#757575"/>
-                                                            <rect width="4" height="16" rx="2" transform="matrix(-1 0 0 1 4 10)" fill="#757575"/>
-                                                        </svg>
-                                                        <div>
-                                                            <p class="fs-12 mb-1">Total Statistic</p>
-                                                            <span class="fs-22 text-black font-w600">452,551k</span>
-                                                        </div>
-                                                    </div>
+
+                                            <div class="col-lg-12 mb-3">
+                                                <div class="form-group">
+                                                    <label class="text-label">Endereço*</label>
+                                                    <input type="text" name="place" class="form-control" required>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-12">
-                            <div class="card recent-review">
-                                <div class="card-header border-0 pb-0">
-                                    <h4 class="fs-20 text-black mb-1">Recent Review</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="media p-3 border">
-                                        <img src="{{ asset('../dev/images/users/1.jpg') }}" alt="" class="mr-sm-4 mr-3">
-                                        <div class="media-body row align-items-center">
-                                            <div class="col-md-8 mb-md-0 mb-3">
-                                                <h4><a href="reviews.html" class="text-black fs-20">Glee Smiley</a></h4>
-                                                <p class="fs-14">Hospital & staff were extremely warm & quick in getting me start with the procedures</p>
-                                                <a href="javascript:void(0)" class="btn btn-xxs btn-outline-primary mr-2">EXCELENT</a>
-                                                <a href="javascript:void(0)" class="btn btn-xxs btn-outline-primary">GREAT SERVICE</a>
+                                    <div id="wizard_Time" class="tab-pane" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-lg-12 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Company Name*</label>
+                                                    <input type="text" name="firstName" class="form-control" placeholder="Cellophane Square" required>
+                                                </div>
                                             </div>
-                                            <div class="col-md-4 text-md-center">
-                                                <h3 class="fs-24 text-primary font-w600 mb-md-2 mb-0">4.5</h3>
-                                                <ul class="stars justify-content-md-center">
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star text-dark"></i></li>
-                                                </ul>
+                                            <div class="col-lg-12 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Company Email Address*</label>
+                                                    <input type="email" class="form-control" id="emial1" placeholder="example@example.com.com" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Company Phone Number*</label>
+                                                    <input type="text" name="phoneNumber" class="form-control" placeholder="(+1)408-657-9007" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Your position in Company*</label>
+                                                    <input type="text" name="place" class="form-control" required>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="media p-3 border">
-                                        <img src="{{ asset('../dev/images/users/2.jpg') }}" alt="" class="mr-sm-4 mr-3">
-                                        <div class="media-body row align-items-center">
-                                            <div class="col-md-8 mb-md-0 mb-3">
-                                                <h4><a href="reviews.html" class="text-black fs-20">Emilian Brownlee</a></h4>
-                                                <p class="fs-14">When I came with my mother, I was very nervous. But after entering here I felt warmed with smiling</p>
-                                                <a href="javascript:void(0)" class="btn btn-xxs btn-outline-primary mr-2">EXCELENT</a>
-                                                <a href="javascript:void(0)" class="btn btn-xxs btn-outline-primary">GREAT SERVICE</a>
+                                    <div id="wizard_Details" class="tab-pane" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-sm-4 mb-2">
+                                                <h4>Monday *</h4>
                                             </div>
-                                            <div class="col-md-4 text-md-center">
-                                                <h3 class="fs-24 text-primary font-w600">4.2</h3>
-                                                <ul class="stars justify-content-md-center">
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star text-dark"></i></li>
-                                                </ul>
+                                            <div class="col-6 col-sm-4 mb-2">
+                                                <div class="form-group">
+                                                    <input class="form-control" value="9.00" type="number" name="input1" id="input1">
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-sm-4 mb-2">
+                                                <div class="form-group">
+                                                    <input class="form-control" value="6.00" type="number" name="input2" id="input2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4 mb-2">
+                                                <h4>Tuesday *</h4>
+                                            </div>
+                                            <div class="col-6 col-sm-4 mb-2">
+                                                <div class="form-group">
+                                                    <input class="form-control" value="9.00" type="number" name="input3" id="input3">
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-sm-4 mb-2">
+                                                <div class="form-group">
+                                                    <input class="form-control" value="6.00" type="number" name="input4" id="input4">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4 mb-2">
+                                                <h4>Wednesday *</h4>
+                                            </div>
+                                            <div class="col-6 col-sm-4 mb-2">
+                                                <div class="form-group">
+                                                    <input class="form-control" value="9.00" type="number" name="input5" id="input5">
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-sm-4 mb-2">
+                                                <div class="form-group">
+                                                    <input class="form-control" value="6.00" type="number" name="input6" id="input6">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4 mb-2">
+                                                <h4>Thrusday *</h4>
+                                            </div>
+                                            <div class="col-6 col-sm-4 mb-2">
+                                                <div class="form-group">
+                                                    <input class="form-control" value="9.00" type="number" name="input7" id="input7">
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-sm-4 mb-2">
+                                                <div class="form-group">
+                                                    <input class="form-control" value="6.00" type="number" name="input8" id="input8">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4 mb-2">
+                                                <h4>Friday *</h4>
+                                            </div>
+                                            <div class="col-6 col-sm-4 mb-2">
+                                                <div class="form-group">
+                                                    <input class="form-control" value="9.00" type="number" name="input9" id="input9">
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-sm-4 mb-2">
+                                                <div class="form-group">
+                                                    <input class="form-control" value="6.00" type="number" name="input10" id="input10">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="media p-3 border">
-                                        <img src="{{ asset('../dev/images/users/3.jpg') }}" alt="" class="mr-sm-4 mr-3">
-                                        <div class="media-body row align-items-center">
-                                            <div class="col-md-8 mb-md-0 mb-3">
-                                                <h4><a href="reviews.html" class="text-black fs-20">Stevani Anderson</a></h4>
-                                                <p class="fs-14">Thanks for all the services, no doubt it is the best hospital. My kidney, BP, diabetes problem</p>
-                                                <a href="javascript:void(0)" class="btn btn-xxs btn-outline-primary mr-2">EXCELENT</a>
-                                                <a href="javascript:void(0)" class="btn btn-xxs btn-outline-primary">GREAT SERVICE</a>
+                                    <div id="wizard_Payment" class="tab-pane" role="tabpanel">
+                                        <div class="row emial-setup">
+                                            <div class="col-lg-3 col-sm-6 col-6">
+                                                <div class="form-group">
+                                                    <label for="mailclient11" class="mailclinet mailclinet-gmail">
+                                                        <input type="radio" name="emailclient" id="mailclient11">
+                                                        <span class="mail-icon">
+																<i class="mdi mdi-google-plus" aria-hidden="true"></i>
+															</span>
+                                                        <span class="mail-text">I'm using Gmail</span>
+                                                    </label>
+                                                </div>
                                             </div>
-                                            <div class="col-md-4 text-md-center">
-                                                <h3 class="fs-24 text-primary font-w600">3.5</h3>
-                                                <ul class="stars justify-content-md-center">
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star"></i></li>
-                                                    <li><i class="las la-star text-dark"></i></li>
-                                                </ul>
+                                            <div class="col-lg-3 col-sm-6 col-6">
+                                                <div class="form-group">
+                                                    <label for="mailclient12" class="mailclinet mailclinet-office">
+                                                        <input type="radio" name="emailclient" id="mailclient12">
+                                                        <span class="mail-icon">
+																<i class="mdi mdi-office" aria-hidden="true"></i>
+															</span>
+                                                        <span class="mail-text">I'm using Office</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-sm-6 col-6">
+                                                <div class="form-group">
+                                                    <label for="mailclient13" class="mailclinet mailclinet-drive">
+                                                        <input type="radio" name="emailclient" id="mailclient13">
+                                                        <span class="mail-icon">
+																<i class="mdi mdi-google-drive" aria-hidden="true"></i>
+															</span>
+                                                        <span class="mail-text">I'm using Drive</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-sm-6 col-6">
+                                                <div class="form-group">
+                                                    <label for="mailclient14" class="mailclinet mailclinet-another">
+                                                        <input type="radio" name="emailclient" id="mailclient14">
+                                                        <span class="mail-icon">
+																<i class="fa fa-question-circle-o"
+                                                                   aria-hidden="true"></i>
+															</span>
+                                                        <span class="mail-text">Another Service</span>
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-xxl-12">
-                    <div class="row">
-                        <div class="col-xl-12 col-xxl-8">
-                            <div class="card appointment-schedule">
-                                <div class="card-header border-0 pb-0">
-                                    <h4 class="fs-20 text-black mb-1">Appointment</h4>
-                                </div>
-                                <div class="card-body pt-2">
-                                    <div class="row">
-                                        <div class="appointment-calender col-xl-12 col-xxl-6 col-md-6 col-sm-7 mb-md-4 mb-0">
-                                            <input type='text' class="form-control d-none" id='datetimepicker1' />
-                                        </div>
-                                        <div class="height380 col-xl-12 col-xxl-6 col-md-6 col-sm-5 dz-scroll" id="appointmentSchedule">
-                                            <div class="d-flex pb-3 border-bottom mb-3 align-items-end">
-                                                <div class="mr-auto">
-                                                    <p class="text-black font-w600 mb-2">Wednesday, June 3th</p>
-                                                    <ul>
-                                                        <li><i class="las la-clock"></i>09:00 - 10:30 AM</li>
-                                                        <li><i class="las la-user"></i>Dr. Samantha</li>
-                                                    </ul>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="skip-email text-center">
+                                                    <p>Or if want skip this step entirely and setup it later</p>
+                                                    <a href="javascript:void(0)">Skip step</a>
                                                 </div>
-                                                <a href="javascript:void(0)" class="text-success mr-3 mb-2">
-                                                    <i class="las la-check-circle scale5"></i>
-                                                </a>
-                                                <a href="javascript:void(0)" class="text-danger mb-2">
-                                                    <i class="las la-times-circle scale5"></i>
-                                                </a>
-                                            </div>
-                                            <div class="d-flex pb-3 border-bottom mb-3 align-items-end">
-                                                <div class="mr-auto">
-                                                    <p class="text-black font-w600 mb-2">Tuesday,  June 16th</p>
-                                                    <ul>
-                                                        <li><i class="las la-clock"></i>09:00 - 10:30 AM</li>
-                                                        <li><i class="las la-user"></i>Dr. Samantha</li>
-                                                    </ul>
-                                                </div>
-                                                <a href="javascript:void(0)" class="text-success mr-3 mb-2">
-                                                    <i class="las la-check-circle scale5"></i>
-                                                </a>
-                                                <a href="javascript:void(0)" class="text-danger mb-2">
-                                                    <i class="las la-times-circle scale5"></i>
-                                                </a>
-                                            </div>
-                                            <div class="d-flex pb-3 border-bottom mb-3 align-items-end">
-                                                <div class="mr-auto">
-                                                    <p class="text-black font-w600 mb-2">Saturday, June 27th</p>
-                                                    <ul>
-                                                        <li><i class="las la-clock"></i>09:00 - 10:30 AM</li>
-                                                        <li><i class="las la-user"></i>Dr. Samantha</li>
-                                                    </ul>
-                                                </div>
-                                                <a href="javascript:void(0)" class="text-success mr-3 mb-2">
-                                                    <i class="las la-check-circle scale5"></i>
-                                                </a>
-                                                <a href="javascript:void(0)" class="text-danger mb-2">
-                                                    <i class="las la-times-circle scale5"></i>
-                                                </a>
-                                            </div>
-                                            <div class="d-flex pb-3 border-bottom mb-3 align-items-end">
-                                                <div class="mr-auto">
-                                                    <p class="text-black font-w600 mb-2">Wednesday, June 3th</p>
-                                                    <ul>
-                                                        <li><i class="las la-clock"></i>09:00 - 10:30 AM</li>
-                                                        <li><i class="las la-user"></i>Dr. Samantha</li>
-                                                    </ul>
-                                                </div>
-                                                <a href="javascript:void(0)" class="text-success mr-3 mb-2">
-                                                    <i class="las la-check-circle scale5"></i>
-                                                </a>
-                                                <a href="javascript:void(0)" class="text-danger mb-2">
-                                                    <i class="las la-times-circle scale5"></i>
-                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-12 col-xxl-4">
-                            <div class="card patient-list">
-                                <div class="card-header border-0 pb-0">
-                                    <h4 class="fs-20 text-black mb-0">Patient List</h4>
-                                    <div class="dropdown">
-                                        <div class="btn-link" role="button" data-toggle="dropdown" aria-expanded="false">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#">Accept Patient</a>
-                                            <a class="dropdown-item" href="#">Reject Order</a>
-                                            <a class="dropdown-item" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex mb-4">
-                                        <img src="{{ asset('../dev/images/users/7.jpg') }}" alt="" class="mr-3">
-                                        <div>
-                                            <h5 class="mb-1"><a href="patient.html" class="fs-18 text-black">Samuel  Hawkins</a></h5>
-                                            <span class="fs-14 text-primary font-w600">Cold & Flue</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex mb-4">
-                                        <img src="{{ asset('../dev/images/users/8.jpg') }}'" alt="" class="mr-3">
-                                        <div>
-                                            <h5 class="mb-1"><a href="patient.html" class="fs-18 text-black">Debora Saragih</a></h5>
-                                            <span class="fs-14 text-primary font-w600">Dental Care</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex  mb-4">
-                                        <img src="{{ asset('../dev/images/users/9.jpg') }}" alt="" class="mr-3">
-                                        <div>
-                                            <h5 class="mb-1"><a href="patient.html" class="fs-18 text-black">Richard Kean</a></h5>
-                                            <span class="fs-14 text-primary font-w600">Physical Problem</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <img src="{{ asset('../dev/images/users/10.jpg') }}" alt="" class="mr-3">
-                                        <div>
-                                            <h5 class="mb-1"><a href="patient.html" class="fs-18 text-black">Kevin Ash</a></h5>
-                                            <span class="fs-14 text-primary font-w600">Dental Care</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer pt-0 border-0">
-                                    <a href="patient.html" class="btn d-block btn-outline-primary">+Assign New Patient</a>
-                                </div>
+
+                                </form>
                             </div>
                         </div>
                     </div>
