@@ -45,7 +45,7 @@
                                             <div class="col-lg-6 mb-2">
                                                 <div class="form-group">
                                                     <label class="text-label">Nome*</label>
-                                                    <input type="text" name="name" class="form-control" placeholder="Medio Exemplo" required>
+                                                    <input type="text" name="name" class="form-control" placeholder="Medico Exemplo" required>
                                                 </div>
                                             </div>
 
