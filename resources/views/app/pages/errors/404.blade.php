@@ -1,23 +1,43 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Página não encontrada') }}
-        </h2>
-    </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <p class="text-base font-semibold text-indigo-600">404</p>
-                    <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Página não encontrada</h1>
-                    <p class="mt-6 text-base leading-7 text-gray-600">Desculpe, não conseguimos encontrar a página que você está procurando.</p>
-                    <div class="mt-10 flex items-center justify-center gap-x-6">
-                        <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Voltar para a página inicial</a>
-                        <a href="#" class="text-sm font-semibold text-gray-900">Contate o suporte <span aria-hidden="true">→</span></a>
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Welly - Hospital Bootstrap Admin Dashboard</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('./dev/images/favicon.png') }}">
+    <link href="{{ asset('./dev/css/style.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="h-100">
+<div class="authincation h-100">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-md-5">
+                <div class="form-input-content text-center error-page">
+                    <h1 class="error-text font-weight-bold">404</h1>
+                    <h4><i class="fa fa-exclamation-triangle text-warning"></i> A página que você procurava não foi encontrada!</h4>
+                    <p>Você pode ter digitado o endereço errado ou a página pode ter sido movida.</p>
+                    <div>
+                        <a class="btn btn-primary" href="{{ url('/') }}">Retornar para o Inicio</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
+</div>
+</body>
+<!--**********************************
+	Scripts
+***********************************-->
+<!-- Required vendors -->
+<script src="{{ asset('./dev/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('./dev/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('./dev/js/custom.min.js') }}"></script>
+<script src="{{ asset('./dev/js/deznav-init.js') }}"></script>
+
+</html>

@@ -1,46 +1,97 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+@include('includes.head')
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+<body>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        <!-- jQuery -->
-        <script src="{{ asset('assets/libs/JQuery/dist/jquery.min.js') }}"></script>
-
-        <!-- DataTables -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/libs/Datatable/datatables.net-dt/css/jquery.dataTables.min.css') }}">
-        <script type="text/javascript" charset="utf8" src="{{ asset('assets/libs/Datatable/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+<!--*******************
+    Preloader start
+********************-->
+<div id="preloader">
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+</div>
+<!--*******************
+    Preloader end
+********************-->
 
 
-    </body>
+<!--**********************************
+    Main wrapper start
+***********************************-->
+<div id="main-wrapper">
+
+    <!--**********************************
+        Nav header start
+    ***********************************-->
+    @include('includes.nav')
+    <!--**********************************
+        Nav header end
+    ***********************************-->
+
+    <!--**********************************
+        Chat box start
+    ***********************************-->
+   @include('includes.chatbox')
+    <!--**********************************
+        Chat box End
+    ***********************************-->
+
+    <!--**********************************
+        Header start
+    ***********************************-->
+    @include('includes.header')
+    <!--**********************************
+        Header end ti-comment-alt
+    ***********************************-->
+
+    <!--**********************************
+        Sidebar start
+    ***********************************-->
+    @include('includes.sidebar')
+    <!--**********************************
+        Sidebar end
+    ***********************************-->
+
+    <!--**********************************
+        Content body start
+    ***********************************-->
+    @yield('content')
+    <!--**********************************
+        Content body end
+    ***********************************-->
+
+    <!--**********************************
+        Footer start
+    ***********************************-->
+    @include('includes.footer')
+    <!--**********************************
+        Footer end
+    ***********************************-->
+
+    <!--**********************************
+       Support ticket button start
+    ***********************************-->
+
+    <!--**********************************
+       Support ticket button end
+    ***********************************-->
+
+
+</div>
+<!--**********************************
+    Main wrapper end
+***********************************-->
+
+<!--**********************************
+    Scripts
+***********************************-->
+<!-- Required vendors -->
+@include('includes.scripts')
+
+</body>
 </html>

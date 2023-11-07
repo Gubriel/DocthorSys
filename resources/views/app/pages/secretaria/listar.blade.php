@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-white leading-tight">
             {{ __('Lista de Secretarias') }}
         </h2>
     </x-slot>
@@ -10,23 +10,30 @@
 
 
 
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100  relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table id="minha-tabela" class="table-auto w-full text-sm text-left text-gray-500 dark:text-gray-400 py-6">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <div class="bg-gray-100 overflow-hidden">
+                <div class="p-6 text-gray-900  relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <table id="minha-tabela" class="table-auto w-full text-sm text-left text-gray-800 py-6">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
-                            <th scope="col" class="px-6 py-3">Nome</th>
-                            <th scope="col" class="px-6 py-3">Especialidade</th>
+                        <th scope="col" class="px-6 py-3">Nome</th>
+                            <th scope="col" class="px-6 py-3">Nº de Registro</th>
                             <th scope="col" class="px-6 py-3">Telefone</th>
+                            <th scope="col" class="px-6 py-3">E-mail</th>
+                            <th scope="col" class="px-6 py-3">CPF</th>
+                            <th scope="col" class="px-6 py-3">RG</th>
+                            <th scope="col" class="px-6 py-3">Endereço</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach ($secretarias as $secretaria)
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <tr class="bg-white border-b border-gray-700">
                                 <td class="px-6 py-4">{{ $secretaria['nome'] }}</td>
-                                <td class="px-6 py-4">{{ $secretaria['especialidade'] }}</td>
+                                <td class="px-6 py-4">{{ $secretaria['registro']}}</td> 
                                 <td class="px-6 py-4">{{ $secretaria['telefone'] }}</td>
-                            </tr>
+                                <td class="px-6 py-4">{{ $secretaria['email']}}</td>
+                                <td class="px-6 py-4">{{ $secretaria['cpf']}}</td>
+                                <td class="px-6 py-4">{{ $secretaria['rg']}}</td>
+                                <td class="px-6 py-4">{{ $secretaria['endereco']}}</td>
                         @endforeach
                         </tbody>
                     </table>
