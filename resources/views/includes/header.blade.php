@@ -2,18 +2,22 @@
     <div class="header-content">
         <nav class="navbar navbar-expand">
             <div class="collapse navbar-collapse justify-content-between">
+
                 <div class="header-left">
-                    <div class="dashboard_bar">
+                    <div class="dashboard_bar d-none">
                         <div class="input-group search-area d-lg-inline-flex d-none">
-                            <input type="text" class="form-control" placeholder="Search here...">
+                            <input type="text" class="form-control d-none" placeholder="Search here...">
                             <div class="input-group-append">
                                 <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
                             </div>
                         </div>
+
+
+
                     </div>
                 </div>
                 <ul class="navbar-nav header-right">
-                    <li class="nav-item dropdown notification_dropdown">
+                    {{--<li class="nav-item dropdown notification_dropdown">
                         <a class="nav-link  ai-icon" href="javascript:void(0)" role="button" data-toggle="dropdown">
                             <img src="{{ asset('/dev/icons/sino.svg') }}">
                             <span class="badge light text-white bg-primary">3</span>
@@ -103,6 +107,7 @@
                            <img src="{{ asset('/dev/icons/presente.svg') }}">
                             <span class="badge light text-white bg-primary">2</span>
                         </a>
+
                         <div class="dropdown-menu dropdown-menu-right p-3">
                             <div id="DZ_W_TimeLine1" class="widget-timeline dz-scroll style-1 height370">
                                 <ul class="timeline">
@@ -157,7 +162,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </li>
+                    </li>--}}
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="javascript:void(0)" role="button" data-toggle="dropdown">
                             <!-- <div class="header-info">
@@ -167,16 +172,10 @@
                             <img src="{{ asset('/dev/images/profile/17.jpg') }}" width="20" alt=" image profile"/>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="./app-profile.html" class="dropdown-item ai-icon">
-                                <img src="{{ asset('/dev/icons/profile.svg') }}" alt="icone profile">
-                            </a>
-                            <a href="./email-inbox.html" class="dropdown-item ai-icon">
-                               <img src="{{ asset('/dev/icons/envelope.svg') }}" alt="icone envelope">
-                                <span class="ml-2">Inbox </span>
-                            </a>
-                            <a href="./page-login.html" class="dropdown-item ai-icon">
+
+                            <a href="{{ route('logout') }}" class="dropdown-item ai-icon">
                                 <img src="{{ asset('/dev/icons/back.svg') }}" alt="icone sair">
-                                <span class="ml-2">Logout </span>
+                                <span class="ml-2">Sair </span>
                             </a>
                         </div>
                     </li>

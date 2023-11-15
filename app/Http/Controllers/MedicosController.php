@@ -29,6 +29,28 @@ class MedicosController extends Controller
         return view('app.pages.medicos.create', compact('medicos','page'));
     }
 
+    private function createUser($request)
+    {
+        return User::create([
+            'name' => $request->nome,
+            'email' => $request->emailLogin,
+            'password' => bcrypt($request->password),
+        ]);
+    }
+
+
+    private function createMedico($request, $userId)
+    {
+        return Medico::create([
+            'nome' => $request->nome,
+            'crm' => $request->crm,
+            'email' => $request->email,
+            'telefone' => $request->telefone,
+            'endereco' => $request->endereco,
+            'user_id' => $userId,
+        ]);
+    }
+
     public function store(Request $request)
     {
         // Valide os dados conforme necessário
@@ -41,45 +63,22 @@ class MedicosController extends Controller
             'emailLogin' => 'required|email|unique:users,email',
         ]);
 
-        try {
-            // Inicie uma transação
-            DB::beginTransaction();
+        // Crie um usuário
+        $user = $this->createUser($request);
 
-            // Crie um usuário com base no e-mail do médico
-            $user = User::create([
-                'name' => $request->nome,
-                'email' => $request->emailLogin,
-                'password' => bcrypt($request->password),
-            ]);
-
-            // Verifique se o usuário foi criado com sucesso
-            if (!$user) {
-                throw new \Exception('Erro ao criar usuário.');
-            }
-
-            $id_vinculo = $user->id;
-
+        // Verifique se o usuário foi criado com sucesso
+        if ($user->id) {
             // Crie um médico associado ao usuário
-            $medico = Medico::create([
-                'nome' => $request->nome,
-                'crm' => $request->crm,
-                'email' => $request->email,
-                'telefone' => $request->telefone,
-                'endereco' => $request->endereco,
-                'user_id' => $id_vinculo,
-            ]);
-
-            // Confirme a transação
-            DB::commit();
+            $medico = $this->createMedico($request, $user->id);
 
             return response()->json(['success' => true]);
-        } catch (\Exception $e) {
-            // Reverta a transação em caso de erro
-            DB::rollBack();
-
-            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        } else {
+            // Caso a criação do usuário falhe
+            return response()->json(['success' => false, 'message' => 'Erro ao criar usuário.']);
         }
     }
+
+
 
     public function delete($id) {
         // Localize o médico pelo ID
