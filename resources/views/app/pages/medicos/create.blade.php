@@ -30,14 +30,9 @@
                                     <li><a class="nav-link" href="#wizard_Time">
                                             <span>2</span>
                                         </a></li>
-                                    <li><a class="nav-link" href="#wizard_Details">
-                                            <span>3</span>
-                                        </a></li>
-                                    <li><a class="nav-link" href="#wizard_Payment">
-                                            <span>4</span>
-                                        </a></li>
                                 </ul>
-                                <form action="">
+                                <form action="{{ route('medico.store') }}" id="cadastroMédico">
+                                    @csrf
                                     <div class="tab-content">
                                     <div id="wizard_Service" class="tab-pane" role="tabpanel">
                                         <div class="row">
@@ -45,7 +40,7 @@
                                             <div class="col-lg-6 mb-2">
                                                 <div class="form-group">
                                                     <label class="text-label">Nome*</label>
-                                                    <input type="text" name="name" class="form-control" placeholder="Medico Exemplo" required>
+                                                    <input type="text" name="nome" class="form-control" placeholder="Medico Exemplo" required>
                                                 </div>
                                             </div>
 
@@ -59,14 +54,14 @@
                                             <div class="col-lg-12 mb-2">
                                                 <div class="form-group">
                                                     <label class="text-label">E-mail*</label>
-                                                    <input type="email" class="form-control" id="inputGroupPrepend2" aria-describedby="inputGroupPrepend2" placeholder="example@example.com.com" required>
+                                                    <input type="email" name="email" class="form-control" id="inputGroupPrepend2" aria-describedby="inputGroupPrepend2" placeholder="example@example.com.com" required>
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-12 mb-2">
                                                 <div class="form-group">
                                                     <label class="text-label">Telefone*</label>
-                                                    <input type="text" name="phone" class="form-control" placeholder="(+55) 46 9 9900-0000" required>
+                                                    <input type="text" name="telefone" class="form-control" placeholder="(+55) 46 9 9900-0000" required>
                                                 </div>
                                             </div>
 
@@ -82,163 +77,29 @@
                                         <div class="row">
                                             <div class="col-lg-12 mb-2">
                                                 <div class="form-group">
-                                                    <label class="text-label">Company Name*</label>
-                                                    <input type="text" name="firstName" class="form-control" placeholder="Cellophane Square" required>
+                                                    <label class="text-label">Email Login*</label>
+                                                    <input type="email" name="emailLogin" class="form-control" id="emailLogin" aria-describedby="inputGroupPrepend2" placeholder="example@example.com.com" required>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 mb-2">
                                                 <div class="form-group">
-                                                    <label class="text-label">Company Email Address*</label>
-                                                    <input type="email" class="form-control" id="emial1" placeholder="example@example.com.com" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 mb-2">
-                                                <div class="form-group">
-                                                    <label class="text-label">Company Phone Number*</label>
-                                                    <input type="text" name="phoneNumber" class="form-control" placeholder="(+1)408-657-9007" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 mb-2">
-                                                <div class="form-group">
-                                                    <label class="text-label">Your position in Company*</label>
-                                                    <input type="text" name="place" class="form-control" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="wizard_Details" class="tab-pane" role="tabpanel">
-                                        <div class="row">
-                                            <div class="col-sm-4 mb-2">
-                                                <h4>Monday *</h4>
-                                            </div>
-                                            <div class="col-6 col-sm-4 mb-2">
-                                                <div class="form-group">
-                                                    <input class="form-control" value="9.00" type="number" name="input1" id="input1">
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-sm-4 mb-2">
-                                                <div class="form-group">
-                                                    <input class="form-control" value="6.00" type="number" name="input2" id="input2">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-4 mb-2">
-                                                <h4>Tuesday *</h4>
-                                            </div>
-                                            <div class="col-6 col-sm-4 mb-2">
-                                                <div class="form-group">
-                                                    <input class="form-control" value="9.00" type="number" name="input3" id="input3">
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-sm-4 mb-2">
-                                                <div class="form-group">
-                                                    <input class="form-control" value="6.00" type="number" name="input4" id="input4">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-4 mb-2">
-                                                <h4>Wednesday *</h4>
-                                            </div>
-                                            <div class="col-6 col-sm-4 mb-2">
-                                                <div class="form-group">
-                                                    <input class="form-control" value="9.00" type="number" name="input5" id="input5">
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-sm-4 mb-2">
-                                                <div class="form-group">
-                                                    <input class="form-control" value="6.00" type="number" name="input6" id="input6">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-4 mb-2">
-                                                <h4>Thrusday *</h4>
-                                            </div>
-                                            <div class="col-6 col-sm-4 mb-2">
-                                                <div class="form-group">
-                                                    <input class="form-control" value="9.00" type="number" name="input7" id="input7">
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-sm-4 mb-2">
-                                                <div class="form-group">
-                                                    <input class="form-control" value="6.00" type="number" name="input8" id="input8">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-4 mb-2">
-                                                <h4>Friday *</h4>
-                                            </div>
-                                            <div class="col-6 col-sm-4 mb-2">
-                                                <div class="form-group">
-                                                    <input class="form-control" value="9.00" type="number" name="input9" id="input9">
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-sm-4 mb-2">
-                                                <div class="form-group">
-                                                    <input class="form-control" value="6.00" type="number" name="input10" id="input10">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="wizard_Payment" class="tab-pane" role="tabpanel">
-                                        <div class="row emial-setup">
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <div class="form-group">
-                                                    <label for="mailclient11" class="mailclinet mailclinet-gmail">
-                                                        <input type="radio" name="emailclient" id="mailclient11">
-                                                        <span class="mail-icon">
-																<i class="mdi mdi-google-plus" aria-hidden="true"></i>
-															</span>
-                                                        <span class="mail-text">I'm using Gmail</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <div class="form-group">
-                                                    <label for="mailclient12" class="mailclinet mailclinet-office">
-                                                        <input type="radio" name="emailclient" id="mailclient12">
-                                                        <span class="mail-icon">
-																<i class="mdi mdi-office" aria-hidden="true"></i>
-															</span>
-                                                        <span class="mail-text">I'm using Office</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <div class="form-group">
-                                                    <label for="mailclient13" class="mailclinet mailclinet-drive">
-                                                        <input type="radio" name="emailclient" id="mailclient13">
-                                                        <span class="mail-icon">
-																<i class="mdi mdi-google-drive" aria-hidden="true"></i>
-															</span>
-                                                        <span class="mail-text">I'm using Drive</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-6">
-                                                <div class="form-group">
-                                                    <label for="mailclient14" class="mailclinet mailclinet-another">
-                                                        <input type="radio" name="emailclient" id="mailclient14">
-                                                        <span class="mail-icon">
-																<i class="fa fa-question-circle-o"
-                                                                   aria-hidden="true"></i>
-															</span>
-                                                        <span class="mail-text">Another Service</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                    <label class="text-label">Senha*</label>
+                                                    <input type="password" name="password" class="form-control" placeholder="Digite sua Senha">
 
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="skip-email text-center">
-                                                    <p>Or if want skip this step entirely and setup it later</p>
-                                                    <a href="javascript:void(0)">Skip step</a>
                                                 </div>
                                             </div>
+                                            <div class="col-lg-12 mb-2">
+                                                <div class="form-group">
+                                                    <label class="text-label">Confirme sua Senha*</label>
+                                                    <input type="password" name="confirmPassword" class="form-control" placeholder="Confirme sua Senha">
+                                                </div>
+                                            </div>
+
+                                            <!-- Botão de envio -->
+                                            <div class="col-lg-12 mb-2">
+                                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

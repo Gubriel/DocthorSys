@@ -39,6 +39,7 @@ Route::middleware(['auth', 'verified'])->group(callback: function () {
         Route::post('/excluir/', [MedicosController::class, 'delete'])->name('delete'); // Excluir
         Route::get('/buscar', [MedicosController::class, 'search'])->name('search'); // Buscar
         Route::get('/create', [MedicosController::class, 'create'])->name('create'); // Buscar
+        Route::post('/store', [MedicosController::class, 'store'])->name('store'); // Buscar
 
     });
 
