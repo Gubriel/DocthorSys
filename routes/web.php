@@ -35,8 +35,8 @@ Route::middleware(['auth', 'verified'])->group(callback: function () {
 
     Route::group(['prefix' => 'medico', 'as' => 'medico.'], function () {
         Route::get('/', [MedicosController::class, 'index'])->name('index'); // Listar
-        Route::get('/editar/', [MedicosController::class, 'edit'])->name('edit'); // Editar
-        Route::post('/excluir/', [MedicosController::class, 'delete'])->name('delete'); // Excluir
+        Route::get('/editar/{id}', [MedicosController::class, 'edit'])->name('edit'); // Editar
+        Route::get('/excluir/{id}', [MedicosController::class, 'delete'])->name('delete'); // Excluir
         Route::get('/buscar', [MedicosController::class, 'search'])->name('search'); // Buscar
         Route::get('/create', [MedicosController::class, 'create'])->name('create'); // Buscar
         Route::post('/store', [MedicosController::class, 'store'])->name('store'); // Buscar

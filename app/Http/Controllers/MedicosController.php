@@ -6,6 +6,7 @@ use App\Models\Medico;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
 
 class MedicosController extends Controller
 {
@@ -40,26 +41,66 @@ class MedicosController extends Controller
             'emailLogin' => 'required|email|unique:users,email',
         ]);
 
-        // Crie um usuário com base no e-mail do médico
-        $user = User::create([
-            'name' => $request->nome,
-            'email' => $request->emailLogin, // Use o campo emailLogin para criar o usuário
-            'password' => bcrypt('senha_padrao'), // Defina uma senha padrão ou gere dinamicamente
-        ]);
+        try {
+            // Inicie uma transação
+            DB::beginTransaction();
 
-        // Crie um médico associado ao usuário
-        $medico = Medico::create([
-            'nome' => $request->nome,
-            'crm' => $request->crm,
-            'email' => $request->email,
-            'telefone' => $request->telefone,
-            'endereco' => $request->endereco,
-            'user_id' => $user->id, // Associe o ID do usuário ao campo user_id
-        ]);
+            // Crie um usuário com base no e-mail do médico
+            $user = User::create([
+                'name' => $request->nome,
+                'email' => $request->emailLogin,
+                'password' => bcrypt($request->password),
+            ]);
 
+            // Verifique se o usuário foi criado com sucesso
+            if (!$user) {
+                throw new \Exception('Erro ao criar usuário.');
+            }
 
-        return response()->json(['success' => true]);
+            $id_vinculo = $user->id;
+
+            // Crie um médico associado ao usuário
+            $medico = Medico::create([
+                'nome' => $request->nome,
+                'crm' => $request->crm,
+                'email' => $request->email,
+                'telefone' => $request->telefone,
+                'endereco' => $request->endereco,
+                'user_id' => $id_vinculo,
+            ]);
+
+            // Confirme a transação
+            DB::commit();
+
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            // Reverta a transação em caso de erro
+            DB::rollBack();
+
+            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        }
     }
 
+    public function delete($id) {
+        // Localize o médico pelo ID
+        $medico = Medico::find($id);
 
+        if (!$medico) {
+            // Se o médico não for encontrado, você pode retornar uma resposta ou redirecionar, dependendo da sua lógica de negócios.
+            return redirect()->route('medico.index')->with('error', 'Médico não encontrado');
+        }
+
+        // Exclua o médico
+        $medico->delete();
+
+        // Exclua também o usuário associado ao médico (assumindo que há uma relação entre os modelos Medico e User)
+        $user = User::find($medico->user_id);
+
+        if ($user) {
+            $user->delete();
+        }
+
+        // Você pode retornar uma resposta ou redirecionar, dependendo da sua lógica de negócios.
+        return redirect()->route('medico.index')->with('success', 'Médico excluído com sucesso');
+    }
 }

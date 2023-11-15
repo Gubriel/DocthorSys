@@ -4,6 +4,11 @@
     @switch($page)
 
         @case($page == 'index')
+
+
+            <script src="{{ asset('../dev/vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+            <script src="{{ asset('../dev/js/plugins-init/sweetalert.init.js') }}"></script>
+
             <script src="{{ asset('../dev/vendor/global/global.min.js') }}"></script>
             <script src="{{ asset('../dev/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
             <script src="{{ asset('../dev/vendor/chart.js/Chart.bundle.min.js') }}"></script>

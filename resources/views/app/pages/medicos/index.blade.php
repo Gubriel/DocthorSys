@@ -2,6 +2,29 @@
 
 @section('content')
 
+
+        @if(session('success'))
+            <!-- Adicione aqui o código para exibir o SweetAlert para sucesso -->
+            <script>
+                swal({
+                    title: "Sucesso!",
+                    text: "{{ session('success') }}",
+                    icon: "success",
+                    button: "OK",
+                });
+            </script>
+        @elseif(session('error'))
+            <!-- Adicione aqui o código para exibir o SweetAlert para erro -->
+            <script>
+                swal({
+                    title: "Erro!",
+                    text: "{{ session('error') }}",
+                    icon: "error",
+                    button: "OK",
+                });
+            </script>
+        @endif
+
         <!--**********************************
             Content body start
         ***********************************-->
@@ -10,16 +33,15 @@
             <div class="container-fluid">
                 <div class="form-head d-flex mb-sm-4 mb-3">
                     <div class="mr-auto">
-                        <h2 class="text-black font-w600">Doctors</h2>
-                        <p class="mb-0">Hospital Admin Dashboard Template</p>
+                        <h2 class="text-black font-w600">Médicos</h2>
+                        <p class="mb-0">Dashboard de Médicos</p>
                     </div>
                     <div>
-                        <a href="javascript:void(0)" class="btn btn-primary mr-3" data-toggle="modal" data-target="#addOrderModal">+New Patient</a>
-                        <a href="index.html" class="btn btn-outline-primary"><i class="las la-calendar-plus scale5 mr-3"></i>Filter Date</a>
+                        <a href="{{ route('medico.create') }}" class="btn btn-primary mr-3"  >Novo Médico</a>
                     </div>
                 </div>
                 <!-- Add Order -->
-                <div class="modal fade" id="addOrderModal">
+               {{-- <div class="modal fade" id="addOrderModal">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -52,7 +74,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="row">
                     <div class="col-12">
                         <div class="table-responsive card-table my-2">
@@ -85,8 +107,8 @@
                                                     </svg>
                                                 </div>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">Edit</a>
-                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                    <a class="dropdown-item" href="{{ route('medico.edit', $medico->id) }}">Editar</a>
+                                                    <a class="dropdown-item" href="{{ route('medico.delete', $medico->id) }}">Deletar</a>
                                                 </div>
                                             </div>
                                         </td>

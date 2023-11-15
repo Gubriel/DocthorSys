@@ -57,6 +57,10 @@
 
                 @break
             @case($page == 'medicos')
+                <!-- Form step -->
+                <link href="{{ ('../dev/vendor/jquery-smartwizard/dist/css/smart_wizard.min.css') }}" rel="stylesheet">
+                <link href="{{ ('../dev/vendor/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet">
+                <link href="{{ ('../dev/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
                 <link href="{{ asset('../dev/vendor/jqvmap/css/jqvmap.min.css') }}" rel="stylesheet">
                 <link rel="stylesheet" href="{{ asset('../dev/vendor/chartist/css/chartist.min.css') }}">
                 <!-- Datatable -->

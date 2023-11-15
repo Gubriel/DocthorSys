@@ -30,7 +30,6 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('medico.create') }}">Criar</a></li>
                             <li><a href="{{ route('medico.index') }}">Listar</a></li>
-                            <li><a href="{{ route('medico.delete') }}">Apagar</a></li>
                         </ul>
                     </li>
                 </ul>
